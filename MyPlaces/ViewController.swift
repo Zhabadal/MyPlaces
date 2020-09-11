@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurantNames.count
     }
@@ -28,7 +28,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let restaurant = restaurantNames[indexPath.row]
         cell.textLabel?.text = restaurant
         cell.imageView?.image = UIImage(named: restaurant)
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true
         return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
 }
 
