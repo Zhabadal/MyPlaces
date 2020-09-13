@@ -14,6 +14,8 @@
 		EE51781E250B6EB800CEEA86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE51781D250B6EB800CEEA86 /* Assets.xcassets */; };
 		EE517821250B6EB800CEEA86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE51781F250B6EB800CEEA86 /* LaunchScreen.storyboard */; };
 		EE517829250BA73F00CEEA86 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE517828250BA73F00CEEA86 /* CustomTableViewCell.swift */; };
+		EE51782B250BA9ED00CEEA86 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51782A250BA9ED00CEEA86 /* PlaceModel.swift */; };
+		EE51782D250BF8F200CEEA86 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51782C250BF8F100CEEA86 /* NewPlaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		EE517820250B6EB800CEEA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE517822250B6EB800CEEA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE517828250BA73F00CEEA86 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		EE51782A250BA9ED00CEEA86 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		EE51782C250BF8F100CEEA86 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				EE517814250B6EB200CEEA86 /* AppDelegate.swift */,
 				EE517816250B6EB200CEEA86 /* SceneDelegate.swift */,
 				EE517818250B6EB200CEEA86 /* ViewController.swift */,
+				EE51782C250BF8F100CEEA86 /* NewPlaceViewController.swift */,
+				EE51782A250BA9ED00CEEA86 /* PlaceModel.swift */,
 				EE517828250BA73F00CEEA86 /* CustomTableViewCell.swift */,
 				EE51781A250B6EB200CEEA86 /* Main.storyboard */,
 				EE51781D250B6EB800CEEA86 /* Assets.xcassets */,
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE517819250B6EB200CEEA86 /* ViewController.swift in Sources */,
+				EE51782D250BF8F200CEEA86 /* NewPlaceViewController.swift in Sources */,
 				EE517815250B6EB200CEEA86 /* AppDelegate.swift in Sources */,
+				EE51782B250BA9ED00CEEA86 /* PlaceModel.swift in Sources */,
 				EE517829250BA73F00CEEA86 /* CustomTableViewCell.swift in Sources */,
 				EE517817250B6EB200CEEA86 /* SceneDelegate.swift in Sources */,
 			);
@@ -289,6 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KM34KGGDU;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KM34KGGDU;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
