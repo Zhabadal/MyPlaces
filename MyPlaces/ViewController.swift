@@ -11,22 +11,46 @@ import RealmSwift
 
 class ViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
     
+    // MARK: - Properties
     var places: Results<Place>!
+    var ascendingSorting = true
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         places = realm.objects(Place.self)
     }
     
+    // MARK: - Actions
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         newPlaceVC.savePlace()
         tableView.reloadData()
     }
     
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        sorting()
+    }
+    
+    @IBAction func reversedSorting(_ sender: Any) {
+        ascendingSorting.toggle()
+        
+        if ascendingSorting {
+            reversedSortingButton.image = #imageLiteral(resourceName: "AZ")
+        } else {
+            reversedSortingButton.image = #imageLiteral(resourceName: "ZA")
+        }
+        
+        sorting()
+    }
+    
+    // MARK: - Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -35,10 +59,21 @@ class ViewController: UIViewController {
             newPlaceVC.currentPlace = place
         }
     }
+    
+    private func sorting() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            places = places.sorted(byKeyPath: "date", ascending: ascendingSorting)
+        } else {
+            places = places.sorted(byKeyPath: "name", ascending: ascendingSorting)
+        }
+        
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.isEmpty ? 0 : places.count
     }

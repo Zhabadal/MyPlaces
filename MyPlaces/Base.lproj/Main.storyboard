@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jUs-dK-Rld">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3lU-VW-Zme" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
@@ -80,17 +80,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="DgM-jl-ZoX"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j8d-Sw-cbj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <segments>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZGU-DX-F9F"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="j8d-Sw-cbj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2QQ-t4-y6d"/>
                             <constraint firstAttribute="bottom" secondItem="jUs-dK-Rld" secondAttribute="bottom" id="E2S-ku-qF6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUs-dK-Rld" secondAttribute="trailing" id="LWk-Cl-2fE"/>
-                            <constraint firstItem="jUs-dK-Rld" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aty-sd-jdq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j8d-Sw-cbj" secondAttribute="trailing" id="N8j-Lt-Mz6"/>
                             <constraint firstItem="jUs-dK-Rld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nTg-of-wal"/>
+                            <constraint firstItem="jUs-dK-Rld" firstAttribute="top" secondItem="j8d-Sw-cbj" secondAttribute="bottom" constant="1" id="qPr-Hl-LIx"/>
+                            <constraint firstItem="j8d-Sw-cbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uas-Lh-sUe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="wiY-Cf-QC5">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="JGg-Vu-Ufp">
+                            <connections>
+                                <action selector="reversedSorting:" destination="BYZ-38-t0r" id="smf-Ao-GBr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HLg-YE-0Wr">
                             <connections>
                                 <segue destination="gid-0h-LPn" kind="presentation" modalTransitionStyle="crossDissolve" id="PO5-8f-Ruj"/>
@@ -98,12 +116,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reversedSortingButton" destination="JGg-Vu-Ufp" id="XEL-F6-dBg"/>
+                        <outlet property="segmentedControl" destination="j8d-Sw-cbj" id="jhl-CH-xgw"/>
                         <outlet property="tableView" destination="jUs-dK-Rld" id="Aui-W6-8MK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1603" y="113"/>
+            <point key="canvasLocation" x="1602.8985507246377" y="112.5"/>
         </scene>
         <!--New Place-->
         <scene sceneID="6ZV-tC-cPf">
@@ -319,6 +339,7 @@
         <segue reference="8qV-k2-KKB"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
     </resources>
 </document>
