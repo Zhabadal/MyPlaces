@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A1544EB808CBFB77566C575 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B71B7DDB25559F61F67621C /* Pods_MyPlaces.framework */; };
 		EE0E55252510E063002F60F3 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E55242510E063002F60F3 /* StorageManager.swift */; };
+		EE0E55272513B167002F60F3 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0E55262513B167002F60F3 /* RatingControl.swift */; };
 		EE517815250B6EB200CEEA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE517814250B6EB200CEEA86 /* AppDelegate.swift */; };
 		EE517817250B6EB200CEEA86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE517816250B6EB200CEEA86 /* SceneDelegate.swift */; };
 		EE517819250B6EB200CEEA86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE517818250B6EB200CEEA86 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		743AB152BCD34191B760299E /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		D118D64987E9557B5AA14FEC /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		EE0E55242510E063002F60F3 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		EE0E55262513B167002F60F3 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		EE517811250B6EB200CEEA86 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE517814250B6EB200CEEA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE517816250B6EB200CEEA86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EE0E55282513BBD1002F60F3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		EE517808250B6EB200CEEA86 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +104,8 @@
 				EE51782A250BA9ED00CEEA86 /* PlaceModel.swift */,
 				EE0E55242510E063002F60F3 /* StorageManager.swift */,
 				EE517828250BA73F00CEEA86 /* CustomTableViewCell.swift */,
+				EE0E55262513B167002F60F3 /* RatingControl.swift */,
+				EE0E55282513BBD1002F60F3 /* New Group */,
 				EE51781A250B6EB200CEEA86 /* Main.storyboard */,
 				EE51781D250B6EB800CEEA86 /* Assets.xcassets */,
 				EE51781F250B6EB800CEEA86 /* LaunchScreen.storyboard */,
@@ -222,6 +233,7 @@
 				EE51782D250BF8F200CEEA86 /* NewPlaceViewController.swift in Sources */,
 				EE517815250B6EB200CEEA86 /* AppDelegate.swift in Sources */,
 				EE0E55252510E063002F60F3 /* StorageManager.swift in Sources */,
+				EE0E55272513B167002F60F3 /* RatingControl.swift in Sources */,
 				EE51782B250BA9ED00CEEA86 /* PlaceModel.swift in Sources */,
 				EE517829250BA73F00CEEA86 /* CustomTableViewCell.swift in Sources */,
 				EE517817250B6EB200CEEA86 /* SceneDelegate.swift in Sources */,

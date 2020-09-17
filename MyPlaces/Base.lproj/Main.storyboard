@@ -262,6 +262,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="fSO-ZF-Aw8">
+                                        <rect key="frame" x="0.0" y="503" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fSO-ZF-Aw8" id="VaT-MA-5Yq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z3d-7u-3yI" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Z3d-7u-3yI" firstAttribute="centerY" secondItem="VaT-MA-5Yq" secondAttribute="centerY" id="gkz-EO-jdQ"/>
+                                                <constraint firstItem="Z3d-7u-3yI" firstAttribute="centerX" secondItem="VaT-MA-5Yq" secondAttribute="centerX" id="sgd-os-ejm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -287,6 +304,7 @@
                         <outlet property="placeLocation" destination="rlG-Da-BEW" id="Vg4-16-ew4"/>
                         <outlet property="placeName" destination="Dv1-rd-Wsg" id="1rG-jc-B1y"/>
                         <outlet property="placeType" destination="2ai-dz-edR" id="opJ-bM-CGF"/>
+                        <outlet property="ratingControl" destination="Z3d-7u-3yI" id="BVS-VF-Iu7"/>
                         <outlet property="saveButton" destination="Obm-eU-81i" id="OsC-Ko-aaa"/>
                     </connections>
                 </tableViewController>
