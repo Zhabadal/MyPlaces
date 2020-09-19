@@ -66,8 +66,9 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                             <real key="value" value="14"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -385,12 +386,25 @@
                                     <action selector="closeVC" destination="8dc-O3-wS0" eventType="touchUpInside" id="S2a-KT-Pbs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJl-Fe-iha">
+                                <rect key="frame" x="324" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YBY-Ck-mrs"/>
+                                    <constraint firstAttribute="width" constant="50" id="nkf-mw-kQP"/>
+                                </constraints>
+                                <state key="normal" image="Location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="8dc-O3-wS0" eventType="touchUpInside" id="Y2O-FW-NBl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="AE5-7N-UHq" firstAttribute="trailing" secondItem="rIo-Pu-PP0" secondAttribute="trailing" id="2nM-9y-n0D"/>
+                            <constraint firstItem="rIo-Pu-PP0" firstAttribute="trailing" secondItem="vJl-Fe-iha" secondAttribute="trailing" constant="40" id="3lC-iR-Fqp"/>
                             <constraint firstItem="rIo-Pu-PP0" firstAttribute="trailing" secondItem="qeV-PI-6YZ" secondAttribute="trailing" constant="40" id="Re1-OE-fwA"/>
                             <constraint firstItem="AE5-7N-UHq" firstAttribute="top" secondItem="z7E-WH-cXO" secondAttribute="top" id="TT8-Kw-ADH"/>
+                            <constraint firstItem="rIo-Pu-PP0" firstAttribute="bottom" secondItem="vJl-Fe-iha" secondAttribute="bottom" constant="40" id="ca0-Oc-ezW"/>
                             <constraint firstAttribute="bottom" secondItem="AE5-7N-UHq" secondAttribute="bottom" id="ghj-QW-tvh"/>
                             <constraint firstItem="AE5-7N-UHq" firstAttribute="leading" secondItem="rIo-Pu-PP0" secondAttribute="leading" id="mQI-TK-zZd"/>
                             <constraint firstItem="qeV-PI-6YZ" firstAttribute="top" secondItem="rIo-Pu-PP0" secondAttribute="top" constant="40" id="oiM-R0-SsO"/>
@@ -450,10 +464,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="camcel" width="128" height="128"/>
-        <image name="emptyStar" width="255" height="256"/>
-        <image name="filledStar" width="237.5" height="238"/>
         <image name="map" width="50" height="50"/>
     </resources>
 </document>
