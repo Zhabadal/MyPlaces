@@ -11,6 +11,7 @@ import Cosmos
 
 class NewPlaceViewController: UITableViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeName: UITextField!
@@ -19,10 +20,12 @@ class NewPlaceViewController: UITableViewController {
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var cosmosView: CosmosView!
     
+    // MARK: - Properties
     var imageIsChanged = false
     var currentPlace: Place!
     var currentRating = 0.0
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,10 +40,12 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
+    // MARK: - Actions
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true)
     }
     
+    // MARK: - Methods
     private func setupEditScreen() {
         if currentPlace != nil {
             setupNavigationBar()
@@ -67,7 +72,46 @@ class NewPlaceViewController: UITableViewController {
         saveButton.isEnabled = true
     }
     
-    // MARK: - UITableViewDelegate
+    func savePlace() {
+        let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder")
+        let imageData = image?.pngData()
+        
+        let newPlace = Place(name: placeName.text!,
+                             location: placeLocation.text,
+                             type: placeType.text,
+                             imageData: imageData,
+                             //rating: Double(ratingControl.rating))
+                             rating: currentRating)
+        
+        if currentPlace != nil {
+            try! realm.write {
+                currentPlace?.name = newPlace.name
+                currentPlace?.location = newPlace.location
+                currentPlace?.type = newPlace.type
+                currentPlace?.imageData = newPlace.imageData
+                currentPlace?.rating = newPlace.rating
+            }
+        } else {
+            StorageManager.saveObject(newPlace)
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" { return }
+        
+        let mapVC = segue.destination as! MapViewController
+        mapVC.place.name = placeName.text!
+        mapVC.place.location = placeLocation.text!
+        mapVC.place.type = placeType.text!
+        mapVC.place.imageData = placeImage.image?.pngData()
+    }
+
+}
+
+// MARK: - UITextFieldDataSource
+extension NewPlaceViewController {
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             
@@ -97,40 +141,6 @@ class NewPlaceViewController: UITableViewController {
             view.endEditing(true)
         }
     }
-    
-    func savePlace() {
-                
-        var image: UIImage?
-        
-        if imageIsChanged {
-            image = placeImage.image
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
-        }
-        
-        let imageData = image?.pngData()
-        
-        let newPlace = Place(name: placeName.text!,
-                             location: placeLocation.text,
-                             type: placeType.text,
-                             imageData: imageData,
-                             //rating: Double(ratingControl.rating))
-                             rating: currentRating)
-        
-        if currentPlace != nil {
-            try! realm.write {
-                currentPlace?.name = newPlace.name
-                currentPlace?.location = newPlace.location
-                currentPlace?.type = newPlace.type
-                currentPlace?.imageData = newPlace.imageData
-                currentPlace?.rating = newPlace.rating
-            }
-        } else {
-            StorageManager.saveObject(newPlace)
-        }
-        
-    }
-
 }
 
 // MARK: - UITextFieldDelegate
