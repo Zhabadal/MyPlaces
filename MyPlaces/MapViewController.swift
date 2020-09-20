@@ -14,18 +14,22 @@ class MapViewController: UIViewController {
     
     // MARK: - Properties
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapPinImage: UIImageView!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var doneButton: UIButton!
     
     var place = Place()
     let annotaionId = "annotaionId"
     let locationManager = CLLocationManager()
     let regionInMeters = 10_000.00
+    var incomeSegueIdentifier = ""
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.delegate = self
-        setupPlacemark()
+        setupMapView()
         checkLocationServices()
     }
     
@@ -35,15 +39,23 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func centerViewInUserLocation() {
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location,
-                                            latitudinalMeters: regionInMeters,
-                                            longitudinalMeters: regionInMeters)
-            mapView.setRegion(region, animated: true)
-        }
+        showUserLocation()
+    }
+    
+    @IBAction func doneButtonPressed() {
+        
     }
     
     // MARK: - Methods
+    private func setupMapView() {
+        if incomeSegueIdentifier == "showPlace" {
+            setupPlacemark()
+            mapPinImage.isHidden = true
+            addressLabel.isHidden = true
+            doneButton.isHidden = true
+        }
+    }
+    
     private func setupPlacemark() {
         guard let location = place.location else { return }
         
@@ -98,6 +110,7 @@ class MapViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            if incomeSegueIdentifier == "getAddress" { showUserLocation() }
             break
         case .denied:
             showAlert(title: "Your location is not available",
@@ -122,6 +135,15 @@ class MapViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(okAction)
         present(alertController, animated: true)
+    }
+    
+    private func showUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
 }
