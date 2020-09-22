@@ -129,7 +129,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HLg-YE-0Wr">
                             <connections>
-                                <segue destination="gid-0h-LPn" kind="presentation" modalTransitionStyle="crossDissolve" id="PO5-8f-Ruj"/>
+                                <segue destination="gid-0h-LPn" kind="presentation" id="PO5-8f-Ruj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

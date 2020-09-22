@@ -20,6 +20,7 @@
 		EE517829250BA73F00CEEA86 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE517828250BA73F00CEEA86 /* CustomTableViewCell.swift */; };
 		EE51782B250BA9ED00CEEA86 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51782A250BA9ED00CEEA86 /* PlaceModel.swift */; };
 		EE51782D250BF8F200CEEA86 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51782C250BF8F100CEEA86 /* NewPlaceViewController.swift */; };
+		EEC2A525251A484D0072451F /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC2A524251A484D0072451F /* MapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EE517828250BA73F00CEEA86 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		EE51782A250BA9ED00CEEA86 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		EE51782C250BF8F100CEEA86 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		EEC2A524251A484D0072451F /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +73,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EE0E55282513BBD1002F60F3 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		EE517808250B6EB200CEEA86 = {
 			isa = PBXGroup;
 			children = (
@@ -99,22 +94,62 @@
 		EE517813250B6EB200CEEA86 /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				EE517814250B6EB200CEEA86 /* AppDelegate.swift */,
-				EE517816250B6EB200CEEA86 /* SceneDelegate.swift */,
-				EE517818250B6EB200CEEA86 /* ViewController.swift */,
-				EE51782C250BF8F100CEEA86 /* NewPlaceViewController.swift */,
-				EE51782A250BA9ED00CEEA86 /* PlaceModel.swift */,
-				EE0E55242510E063002F60F3 /* StorageManager.swift */,
-				EE517828250BA73F00CEEA86 /* CustomTableViewCell.swift */,
-				EE0E552925164081002F60F3 /* MapViewController.swift */,
-				EE0E55262513B167002F60F3 /* RatingControl.swift */,
-				EE0E55282513BBD1002F60F3 /* New Group */,
-				EE51781A250B6EB200CEEA86 /* Main.storyboard */,
-				EE51781D250B6EB800CEEA86 /* Assets.xcassets */,
-				EE51781F250B6EB800CEEA86 /* LaunchScreen.storyboard */,
+				EEC2A526251A976B0072451F /* ViewControllers */,
+				EEC2A528251A97BE0072451F /* Helpers */,
+				EEC2A527251A97B30072451F /* Models */,
+				EEC2A52A251A98020072451F /* IBuilder */,
+				EEC2A529251A97D00072451F /* Support Files */,
 				EE517822250B6EB800CEEA86 /* Info.plist */,
 			);
 			path = MyPlaces;
+			sourceTree = "<group>";
+		};
+		EEC2A526251A976B0072451F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE517818250B6EB200CEEA86 /* ViewController.swift */,
+				EE51782C250BF8F100CEEA86 /* NewPlaceViewController.swift */,
+				EE0E552925164081002F60F3 /* MapViewController.swift */,
+				EE517828250BA73F00CEEA86 /* CustomTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EEC2A527251A97B30072451F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE51782A250BA9ED00CEEA86 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EEC2A528251A97BE0072451F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EE0E55242510E063002F60F3 /* StorageManager.swift */,
+				EEC2A524251A484D0072451F /* MapManager.swift */,
+				EE0E55262513B167002F60F3 /* RatingControl.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EEC2A529251A97D00072451F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE517814250B6EB200CEEA86 /* AppDelegate.swift */,
+				EE517816250B6EB200CEEA86 /* SceneDelegate.swift */,
+				EE51781D250B6EB800CEEA86 /* Assets.xcassets */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		EEC2A52A251A98020072451F /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				EE51781A250B6EB200CEEA86 /* Main.storyboard */,
+				EE51781F250B6EB800CEEA86 /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +273,7 @@
 				EE0E55252510E063002F60F3 /* StorageManager.swift in Sources */,
 				EE0E552A25164082002F60F3 /* MapViewController.swift in Sources */,
 				EE0E55272513B167002F60F3 /* RatingControl.swift in Sources */,
+				EEC2A525251A484D0072451F /* MapManager.swift in Sources */,
 				EE51782B250BA9ED00CEEA86 /* PlaceModel.swift in Sources */,
 				EE517829250BA73F00CEEA86 /* CustomTableViewCell.swift in Sources */,
 				EE517817250B6EB200CEEA86 /* SceneDelegate.swift in Sources */,
